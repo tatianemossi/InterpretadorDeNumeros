@@ -8,9 +8,9 @@ namespace InterpretadorDeNumeros.ConsoleApp
     {
         static void Main(string[] args)
         {
-            string texto = " __   __  \n" +
-                           " __| |  | \n" +
-                           "|__  |__| ";
+            string texto = "      __   __        __   __   __   __   __   __  \n" +
+                           "   |  __|  __| |__| |__  |__     | |__| |__| |  | \n" +
+                           "   | |__   __|    |  __| |__|    | |__|  __| |__| ";
 
 
             StringReader leitorTexto = new StringReader(texto);
@@ -88,11 +88,59 @@ namespace InterpretadorDeNumeros.ConsoleApp
                 indicePrimeiraColuna += 5;
                 indiceUltimaColuna += 5;
 
-                if (estruturaDoNumero[0] && estruturaDoNumero[1] && estruturaDoNumero[6] &&
+                if (estruturaDoNumero[0] == false && estruturaDoNumero[1] && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] == false && estruturaDoNumero[4] == false && estruturaDoNumero[5] == false &&
+                estruturaDoNumero[6] == false)
+                {
+                    Console.Write("1");
+                }
+                else if (estruturaDoNumero[0] && estruturaDoNumero[1] && estruturaDoNumero[6] &&
                 estruturaDoNumero[4] && estruturaDoNumero[3] && estruturaDoNumero[5] == false && 
                 estruturaDoNumero[2] == false)
                 {
                     Console.Write("2");
+                }
+                else if (estruturaDoNumero[0] && estruturaDoNumero[1] && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] && estruturaDoNumero[4] == false && estruturaDoNumero[5] == false &&
+                estruturaDoNumero[6])
+                {
+                    Console.Write("3");
+                }
+                else if (estruturaDoNumero[0] == false && estruturaDoNumero[1] && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] == false && estruturaDoNumero[4] == false && estruturaDoNumero[5] &&
+                estruturaDoNumero[6])
+                {
+                    Console.Write("4");
+                }
+                else if (estruturaDoNumero[0] && estruturaDoNumero[1] == false && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] && estruturaDoNumero[4] == false && estruturaDoNumero[5] &&
+                estruturaDoNumero[6])
+                {
+                    Console.Write("5");
+                }
+                else if (estruturaDoNumero[0] && estruturaDoNumero[1] == false && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] && estruturaDoNumero[4] && estruturaDoNumero[5] &&
+                estruturaDoNumero[6])
+                {
+                    Console.Write("6");
+                }
+                else if (estruturaDoNumero[0] && estruturaDoNumero[1] && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] == false && estruturaDoNumero[4] == false && estruturaDoNumero[5] == false &&
+                estruturaDoNumero[6] == false)
+                {
+                    Console.Write("7");
+                }
+                else if (estruturaDoNumero[0] && estruturaDoNumero[1] && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] && estruturaDoNumero[4] && estruturaDoNumero[5] &&
+                estruturaDoNumero[6])
+                {
+                    Console.Write("8");
+                }
+                else if (estruturaDoNumero[0] && estruturaDoNumero[1] && estruturaDoNumero[2] &&
+                estruturaDoNumero[3] && estruturaDoNumero[4] == false && estruturaDoNumero[5] &&
+                estruturaDoNumero[6])
+                {
+                    Console.Write("9");
                 }
                 else if (estruturaDoNumero[0] && estruturaDoNumero[1] && estruturaDoNumero[2] &&
                 estruturaDoNumero[3] && estruturaDoNumero[4] && estruturaDoNumero[5] && 
@@ -102,7 +150,7 @@ namespace InterpretadorDeNumeros.ConsoleApp
                 }
                 else
                 {
-                    Console.WriteLine("Não identifiquei, senhora.");
+                    Console.WriteLine("Não identificado.");
                 }
             }
 
